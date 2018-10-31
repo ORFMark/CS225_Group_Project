@@ -11,6 +11,7 @@
 #include <string>
 #include <fstream>
 using namespace std;
+#define NUMBER_OF_ITEMS = 10
 class Item {
 private:
 	string name;
@@ -18,10 +19,7 @@ private:
 	float bonus;
 	bool isPrecent;
 public:
-	string getItem(string name);
-	string getItem();
-	Item(string name, string target, float bonus, bool isPrecent = false);
-	Item(string rawItemString);
+	Item(string name = "random");
 	string getName() {return name;}
 	string getTargetStat() {return target;}
 	float getBonus() {return bonus;}

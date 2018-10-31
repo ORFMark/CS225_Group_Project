@@ -7,14 +7,11 @@
 
 #include "Items.h"
 using namespace std;
-string Item::getItem(string name) {
+Item::Item(string name) {
 	string line;
 	ifstream fin("Items.txt");
-	while (true) {
-		if (!fin.bad()) {
-			getline(fin, line);
-			cout << line;
-		}
+	if (name.compare("random") == 0) {
+
 	}
 
 }
