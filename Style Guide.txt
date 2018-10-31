@@ -1,0 +1,8 @@
+Defines:
+	All defines must have a define guard to reduce system overhead
+	User-defined files shall be defined after System defines to prevent conflicts
+Coding style:
+	Use camelCase for varaible names
+	Variable names shall be verbose to provide self-doucmenting code
+	soruce files shall contain related classes and subclasses only
+	
