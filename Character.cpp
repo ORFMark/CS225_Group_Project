@@ -18,12 +18,12 @@ private:
 public:
 	Character(string, float, float, float);
 	~Character();
-	void Attack(Character& target);
+	void Attack(Character&);
 	void Loot(&Cell); // the cell class is to be added
-	void Move(char direction); // changed to char ('u', 'd', 'l', 'r' : "up", "down", "left", "right")
+	// void Move(char direction); // changed to char ('u', 'd', 'l', 'r' : "up", "down", "left", "right")
 	void AddBonus(Item);
 	void RemoveItem(Item);
-	void status(); // will just print to screen the stats of the character, including the inventory
+	friend ostream& operator<<(ostream&, Character&); // displays characters fields
 };
 
 Character::Character(string name = "Player", float health = 100.0, float attack = 20.0, float defense = 10.0) {
@@ -34,5 +34,23 @@ Character::Character(string name = "Player", float health = 100.0, float attack 
 }
 
 Character::~Character() {
-	cout << "Wasted" << endl;
+	cout << "Wasted!" << endl;
+}
+
+void Character::Attack(Character& target) {
+	target.health -= (attack - target.defense);
+}
+
+// TODO
+void Character::Loot(&Cell location) {
+
+}
+
+ostream& operator<<(ostream& os, Character& player) {
+	os << "Name: " << player.name << endl;
+	os << "Health: " << player.health << endl;
+	os << "Attack: " << player.attack << endl;
+	os << "Defense: " << player.defense << endl;
+	// os << "Inventory: " << ;
+	return os;
 }
