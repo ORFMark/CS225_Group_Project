@@ -13,8 +13,6 @@
 using namespace std;
 
 int main() {
-	ofstream fout("Items.txt");
-	fout << "'Sword' attack 10 F" << endl;
-	cout << Item::getItem("Sword") << endl;
+	Item test("random");
 	return 0;
 }

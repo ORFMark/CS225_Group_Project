@@ -10,11 +10,10 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string>
+#include <vector>
 using namespace std;
 int randint(int lowerBound, int upperBound);
-string* stringSplit(string raw);
-
-
+vector<string> stringSplit(string raw);
 
 
 #endif /* UTIL_H_ */
