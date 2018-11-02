@@ -7,31 +7,33 @@
 #include "Util.h"
 
 int randInt(int lowerBound, int upperBound) {
-	return (rand() / (double) RAND_MAX) * (upperBound - lowerBound) + lowerBound;
+	return ((double) rand() / (double) RAND_MAX) * (upperBound - lowerBound) + lowerBound;
 }
 
 vector<string> stringSplit(string rawString) {
 	vector<string> strV;
 	vector<int> splitList;
-	bool quoteSearch = false;
-	cout << rawString.length() << endl;
-	for(int i = 0; i < rawString.length(); i++) {
+	string subStr;
+	int i = 0;
+	for(i = 0; i < rawString.length(); i++) {
 		if (rawString.at(i) == '\'') {
-			cout << "Found ' at " << i << endl;
-			splitList.push_back(i);
-			quoteSearch = !quoteSearch;
-		}
-		else if (rawString.at(i) == ' ' && quoteSearch == false) {
-			cout << "found ' '  at " << i << endl;
+			//cout << "found quote at " << i << endl;
 			splitList.push_back(i);
 		}
 	}
-	cout << "size of split: " << splitList.size() << endl;
-	for(int i = 0; i < splitList.size(); i+=2) {
-		cout << rawString.substr(splitList.at(i), splitList.at(i+1)) << endl;
-		strV.push_back(rawString.substr(splitList.at(i), splitList.at(i+1)));
+	for (i = 0; i < splitList.size(); i+=2) {
+		//cout << "i: " << i <<endl;
+		//cout << "Start: " << splitList.at(i) << endl;
+		//cout << "end: " << splitList.at(i+1) << endl;
+		//cout << "Raw: " << rawString << endl;
+		//cout << "Splice: " << rawString.substr(splitList.at(i), (splitList.at(i+1) - splitList.at(i))) << endl;
+		subStr = rawString.substr(splitList.at(i), splitList.at(i+1) - splitList.at(i));
+		if (subStr.at(0) == '\'') {
+			subStr.erase(0,1);
+		}
+		//cout << subStr << endl;
+		strV.push_back(subStr);
 	}
-	cout << "length of strings: " << strV.size() << endl;
 	return strV;
 }
 

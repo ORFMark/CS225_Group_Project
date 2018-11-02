@@ -19,7 +19,7 @@ public:
 	Character(string, float, float, float);
 	~Character();
 	void Attack(Character&);
-	void Loot(&Cell); // the cell class is to be added
+	//void Loot(&Cell); // the cell class is to be added
 	// void Move(char direction); // changed to char ('u', 'd', 'l', 'r' : "up", "down", "left", "right")
 	void AddBonus(Item);
 	void RemoveItem(Item);
@@ -42,9 +42,9 @@ void Character::Attack(Character& target) {
 }
 
 // TODO
-void Character::Loot(&Cell location) {
-
-}
+//void Character::Loot(&Cell location) {
+//
+//}
 
 ostream& operator<<(ostream& os, Character& player) {
 	os << "Name: " << player.name << endl;

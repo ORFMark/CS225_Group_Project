@@ -12,7 +12,7 @@
 #include <string>
 #include <vector>
 using namespace std;
-int randint(int lowerBound, int upperBound);
+int randInt(int lowerBound, int upperBound);
 vector<string> stringSplit(string raw);
 
 

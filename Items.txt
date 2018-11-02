@@ -1,10 +1,10 @@
-'Sword' attack 10 F 
-'Sheild' defense 10 F 
-'Armour' health 10 F 
-'Axe' attack 15 F 
-'Health Potion' health 20 T 
-'Enchantment of Fire' attack 25 T 
-'Flag' defense 15 T 
-'Enchantment of Protection' defense 25 T 
-'Excalibur' attack 30 T 
-'Durandal' attack 30 T 
+'Sword''attack''10''F' 
+'Sheild' 'defense''10''F' 
+'Armour' 'health' '10''F' 
+'Axe''attack''15''F' 
+'Health Potion''health''20''T' 
+'Enchantment of Fire''attack''25''T' 
+'Flag''defense''15''T' 
+'Enchantment of Protection''defense''25''T' 
+'Excalibur''attack''30''T' 
+'Durandal''attack''30''T' 
