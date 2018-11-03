@@ -9,6 +9,7 @@
 #define UTIL_H_
 #include <iostream>
 #include <stdlib.h>
+#include <time.h>
 #include <string>
 #include <vector>
 using namespace std;

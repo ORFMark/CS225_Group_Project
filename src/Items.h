@@ -11,7 +11,6 @@
 #include <string>
 #include <fstream>
 #include "util.h"
-#define NUMBER_OF_ITEMS 10
 using namespace std;
 
 class Item {

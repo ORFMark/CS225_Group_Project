@@ -13,7 +13,8 @@ Item::Item(string name) {
 	string line;
 	ifstream fin("Items.txt");
 	int rand;
-
+	getline(fin, line);
+	int NUMBER_OF_ITEMS = stoi(line);
 	vector<string> parser;
 	if (name.compare("random") ==  0) {
 		rand = randInt(0,NUMBER_OF_ITEMS);
@@ -39,7 +40,7 @@ Item::Item(string name) {
 	else {
 		this->isPrecent = true;
 	}
-	//cout << "finished building item" << this->name << endl;
+	cout << "finished building item" << this->name << endl;
 	fin.close();
 }
 
