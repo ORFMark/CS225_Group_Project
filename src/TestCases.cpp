@@ -17,6 +17,9 @@ int main() {
 	srand(time(NULL));
 	Item test("random");
 	Enchantment test2("random");
+	cout << test << endl;
+	cout << test2 << endl;
+	fflush(stdout);
 	Map map(10);
 	return 0;
 }
