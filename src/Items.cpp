@@ -18,7 +18,7 @@ Item::Item(string name) {
 	vector<string> parser;
 	if (name.compare("random") ==  0) {
 		rand = randInt(0,NUMBER_OF_ITEMS);
-		cout << rand << endl;
+	//	cout << rand << endl;
 		for (int i = 0; i <= rand; i++) {
 			getline(fin, line);
 			parser = stringSplit(line);
@@ -27,6 +27,9 @@ Item::Item(string name) {
 	else {
 		do {
 			getline(fin, line);
+			if (line.length() < 3) {
+				throw "No Such item!";
+			}
 			parser = stringSplit(line);
 		} while (parser.at(0).compare(name) != 0);
 	}
@@ -40,7 +43,7 @@ Item::Item(string name) {
 	else {
 		this->isPrecent = true;
 	}
-	cout << "finished building item" << this->name << endl;
+	//cout << "finished building item" << this->name << endl;
 	fin.close();
 }
 
@@ -66,7 +69,7 @@ Enchantment::Enchantment(string name) {
 		vector<string> parser;
 		if (name.compare("random") ==  0) {
 			rand = randInt(0,NUMBER_OF_ITEMS);
-			cout << rand << endl;
+		//	cout << rand << endl;
 			for (int i = 0; i <= rand; i++) {
 				getline(fin, line);
 				parser = stringSplit(line);
@@ -88,7 +91,7 @@ Enchantment::Enchantment(string name) {
 		else {
 			this->isPrecent = true;
 		}
-		//cout << "finished building item" << this->name << endl;
+		//cout << "finished building Enchantment" << this->name << endl;
 		fin.close();
 }
 
