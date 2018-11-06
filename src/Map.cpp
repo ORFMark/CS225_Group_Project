@@ -6,5 +6,12 @@ Map::Map(int size) {
 	for (int i = 0; i < size; i++) {
 		map[i] = new Cell[size];
 	}
-	spawn = map[0][0];
+	for(int i = 0; i < size; i++) {
+		for(int j = 0; j < size; j++) {
+			Cell c((i*j) % (2*size));
+			map[i][j] = c;
+		}
+	}
+	spawn[0] = 0;
+	spawn[1] = 0;
 }

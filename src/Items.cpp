@@ -49,7 +49,7 @@ Item::Item(string name) {
 
 ostream& operator<<(ostream& os, Item& item) {
 	os << "Item: " << item.name << " Bonus: " << item.bonus;
-	fflush(stdout);
+	//fflush(stdout);
 	return os;
 }
 
@@ -97,5 +97,5 @@ Enchantment::Enchantment(string name) {
 }
 
 Enchantment::~Enchantment() {
-	cout << name << "Has been removed";
+	cout << name << "Has been removed" << endl;
 }

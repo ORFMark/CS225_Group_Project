@@ -10,16 +10,16 @@ vector<Character> Cell::generateEncounter(int difficulty) {
 
 }
 
-vector<Item> Cell::generateLoot(int difficulty) {
-	vector<Item> Inv;
+vector<Item*> Cell::generateLoot(int difficulty) {
+	vector<Item*> Inv;
 	for(int i = 0; i < difficulty; i++) {
 		if(randInt(0,3) == 1) {
-			Item it();
-			Inv.push_back(it);
+			Enchantment it("random");
+			Inv.push_back((&it));
 		}
 		else {
-			Enchantment e();
-			Inv.push_back(e);
+			Item e("random");
+			Inv.push_back(&e);
 		}
 	}
 	return Inv;

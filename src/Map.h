@@ -4,7 +4,7 @@ class Map {
 private:
 	int size;
 	Cell** map;
-	Cell spawn;
+	int spawn[2];
 public:
 	Map(int size);
 };
