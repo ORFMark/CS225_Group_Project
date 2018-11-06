@@ -1,5 +1,6 @@
 #pragma once
-
+#include "Character.h"
+#include "Items.h"
 class Cell {
 private:
 	vector<Character> Encounter;

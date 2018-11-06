@@ -1,5 +1,5 @@
 /*
- * Characters.h
+ * Items.h
  *
  *  Created on: Oct 30, 2018
  *      Author: Mark
@@ -14,7 +14,7 @@
 using namespace std;
 
 class Item {
-private:
+protected:
 	string name;
 	string target;
 	float bonus;
@@ -27,5 +27,12 @@ public:
 	bool precent() {return isPrecent;}
 	bool operator==(Item&);
 	friend ostream& operator<<(ostream& os, Item& item);
+	~Item();
 };
-#endif /* CHARACTERS_H_ */
+
+class Enchantment : public Item {
+public:
+	Enchantment(string name = "random");
+	~Enchantment();
+};
+#endif /* ITEMS_H_ */

@@ -14,7 +14,9 @@
 using namespace std;
 
 int main() {
+	srand(time(NULL));
 	Item test("random");
-	Map map = new Map(10);
+	Enchantment test2("random");
+	Map map(10);
 	return 0;
 }

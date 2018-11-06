@@ -5,9 +5,7 @@
  *      Author: Mark
  */
 #include "Util.h"
-
 int randInt(int lowerBound, int upperBound) {
-	srand(time(NULL));
 	return ((double) rand() / (double) RAND_MAX) * (upperBound - lowerBound) + lowerBound;
 }
 

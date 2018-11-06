@@ -1,4 +1,8 @@
 #pragma once
+#include <string>
+#include <iostream>
+#include "Items.h"
+using namespace std;
 class Character {
 private:
 	string name;
