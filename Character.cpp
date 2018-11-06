@@ -6,25 +6,9 @@
 #include <iostream>
 #include <string>
 #include "Items.h"
+#include "Character.h"
 using namespace std;
 
-class Character {
-private: 
-	string name;
-	float health;
-	float attack;
-	float defense; // takes away from the attack stats
-	// item<vector> inventory
-public:
-	Character(string, float, float, float);
-	~Character();
-	void Attack(Character&);
-	//void Loot(&Cell); // the cell class is to be added
-	// void Move(char direction); // changed to char ('u', 'd', 'l', 'r' : "up", "down", "left", "right")
-	void AddBonus(Item);
-	void RemoveItem(Item);
-	friend ostream& operator<<(ostream&, Character&); // displays characters fields
-};
 
 Character::Character(string name = "Player", float health = 100.0, float attack = 20.0, float defense = 10.0) {
 	this->name = name;

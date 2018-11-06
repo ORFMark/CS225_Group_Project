@@ -1,5 +1,5 @@
 /*
- * Characters.h
+ * Items.h
  *
  *  Created on: Oct 30, 2018
  *      Author: Mark
@@ -26,4 +26,9 @@ public:
 	float getBonus() {return bonus;}
 	bool precent() {return isPrecent;}
 };
-#endif /* CHARACTERS_H_ */
+
+class Enchantment : public Item {
+public:
+	Enchantment(string name = "random");
+};
+#endif /* ITEMS_H_ */
