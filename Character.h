@@ -1,5 +1,4 @@
 #pragma once
-#include "Items.h"
 class Character {
 private:
 	string name;
