@@ -11,6 +11,16 @@ vector<Character> Cell::generateEncounter(int difficulty) {
 }
 
 vector<Item> Cell::generateLoot(int difficulty) {
-	// take a random item, if any, add it to a temp vector<Item>
-	// return it to the Cell. Depends on difficulty of the Cell
+	vector<Item> Inv;
+	for(int i = 0; i < difficulty; i++) {
+		if(randInt(0,3) == 1) {
+			Item it();
+			Inv.push_back(it);
+		}
+		else {
+			Enchantment e();
+			Inv.push_back(e);
+		}
+	}
+	return Inv;
 }

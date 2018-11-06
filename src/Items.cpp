@@ -49,6 +49,7 @@ Item::Item(string name) {
 
 ostream& operator<<(ostream& os, Item& item) {
 	os << "Item: " << item.name << " Bonus: " << item.bonus;
+	fflush(stdout);
 	return os;
 }
 
