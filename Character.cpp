@@ -5,26 +5,10 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include "Items.h"
+#include "Character.h"
 using namespace std;
-
-class Character {
-private: 
-	string name;
-	float health;
-	float attack;
-	float defense; // takes away from the attack stats
-	// item<vector> inventory
-public:
-	Character(string, float, float, float);
-	~Character();
-	void Attack(Character&);
-	//void Loot(&Cell); // the cell class is to be added
-	// void Move(char direction); // changed to char ('u', 'd', 'l', 'r' : "up", "down", "left", "right")
-	void AddBonus(Item);
-	void RemoveItem(Item);
-	friend ostream& operator<<(ostream&, Character&); // displays characters fields
-};
 
 Character::Character(string name = "Player", float health = 100.0, float attack = 20.0, float defense = 10.0) {
 	this->name = name;
@@ -38,7 +22,24 @@ Character::~Character() {
 }
 
 void Character::Attack(Character& target) {
-	target.health -= (attack - target.defense);
+	if (target.health > 0)
+		target.health -= (attack - target.defense);
+}
+
+// TODO
+// void Character::AddBonus(Item item) {
+// 	
+// }
+
+bool Character::RemoveItem(Item item) {
+	vector<Item>::iterator it;
+	for (it = inventory.begin(); it != inventory.end(); it++) {
+		if (item == *it) { // need to override the boolean equals operator for the item class
+			inventory.erase(it);
+			return true;
+		}
+	}
+	return false;
 }
 
 // TODO
@@ -47,10 +48,13 @@ void Character::Attack(Character& target) {
 //}
 
 ostream& operator<<(ostream& os, Character& player) {
+	vector<Item>::iterator it;
 	os << "Name: " << player.name << endl;
 	os << "Health: " << player.health << endl;
 	os << "Attack: " << player.attack << endl;
 	os << "Defense: " << player.defense << endl;
-	// os << "Inventory: " << ;
+	os << "Inventory: ";
+	for (it = player.inventory.begin(); it != player.inventory.end(); it++)
+		os << *it << " "; // need to override the insertion operator for the item class
 	return os;
 }

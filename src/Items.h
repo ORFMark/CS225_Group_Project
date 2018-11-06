@@ -25,5 +25,7 @@ public:
 	string getTargetStat() {return target;}
 	float getBonus() {return bonus;}
 	bool precent() {return isPrecent;}
+	bool operator==(Item&);
+	friend ostream& operator<<(ostream& os, Item& item);
 };
 #endif /* CHARACTERS_H_ */

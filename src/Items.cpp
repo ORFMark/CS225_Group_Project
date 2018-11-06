@@ -44,4 +44,15 @@ Item::Item(string name) {
 	fin.close();
 }
 
+ostream& operator<<(ostream& os, Item& item) {
+	os << "Item: " << item.name << " Bonus: " << item.bonus;
+	return os;
+}
+
+bool Item::operator==(Item& item) {
+	if (item.name == name)
+		return true;
+	return false;
+}
+
 
