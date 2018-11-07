@@ -103,5 +103,5 @@ ostream& operator<<(ostream& os, Enchanted_Item& item) {
 	return os;
 }
 Enchanted_Item::~Enchanted_Item() {
-	cout << name << "Has been removed" << endl;
+	cout << enchantmentName << "Has been removed" << endl;
 }

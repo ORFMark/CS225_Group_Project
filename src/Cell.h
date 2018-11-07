@@ -14,4 +14,5 @@ public:
 		Encounter = generateEncounter(difficulty);
 		Loot = generateLoot(difficulty);
 	}
+	void lootCell(Character&);
 };

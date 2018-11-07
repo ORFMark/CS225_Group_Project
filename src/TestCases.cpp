@@ -3,13 +3,13 @@
 // Author      : Mark Burrell
 // Version     :
 // Copyright   : Copywrite 2018 MRB All rights Reserved
-// Description : Hello World in C++, Ansi-style
+// Description : Run tests in C++, Ansi-style
 //============================================================================
 
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "items.h"
+#include "Items.h"
 #include "Map.h"
 #include "Character.h"
 using namespace std;
@@ -21,7 +21,7 @@ int main() {
 	cout << test << endl;
 	cout << test2 << endl;
 	Character player("Player", 100, 20, 10);
-	player.AddItem(&test2);
+	player.AddItem(&test);
 	cout << player << endl;
 	fflush(stdout);
 	Map map(10);

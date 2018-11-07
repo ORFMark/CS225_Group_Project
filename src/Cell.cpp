@@ -24,3 +24,10 @@ vector<Item*> Cell::generateLoot(int difficulty) {
 	}
 	return Inv;
 }
+
+void Cell::lootCell(Character& looter) {
+	for(int i = 0; i < Loot.size(); i++) {
+		looter.AddItem(Loot.at(i));
+	}
+	Loot.clear();
+}

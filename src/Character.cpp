@@ -32,6 +32,7 @@ void Character::AddItem(Item *item) {
 	string d = "defense";
 	string a = "attack";
 	int caseSelect;
+	inventory.push_back(item);
 	if(item->target.compare(h) == 0) {
 		caseSelect = 0;
 	}
@@ -141,10 +142,8 @@ bool Character::RemoveItem(Item *item) {
 	return false;
 }
 
-// TODO
-//void Character::Loot(&Cell location) {
-//
-//}
+
+
 
 ostream& operator<<(ostream& os, Character& player) {
 	os << "Name: " << player.name << endl;
