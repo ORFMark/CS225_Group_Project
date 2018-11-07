@@ -16,7 +16,7 @@ using namespace std;
 int main() {
 	srand(time(NULL));
 	Item test("random");
-	Enchantment test2("random");
+	Enchanted_Item test2("random");
 	cout << test << endl;
 	cout << test2 << endl;
 	fflush(stdout);

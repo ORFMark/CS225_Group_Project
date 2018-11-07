@@ -19,6 +19,7 @@ protected:
 	string target;
 	float bonus;
 	bool isPrecent;
+	bool hasEnchantment;
 public:
 	Item(string name = "random");
 	string getName() {return name;}
@@ -30,9 +31,15 @@ public:
 	~Item();
 };
 
-class Enchantment : public Item {
+class Enchanted_Item : public Item {
+protected:
+	string enchantmentName;
+	string enchantmentTarget;
+	float enchantmentBonus;
+	bool enchantmentPrecent;
 public:
-	Enchantment(string name = "random");
-	~Enchantment();
+	Enchanted_Item(string name = "random");
+	friend ostream& operator<<(ostream& os, Enchanted_Item& item);
+	~Enchanted_Item();
 };
 #endif /* ITEMS_H_ */

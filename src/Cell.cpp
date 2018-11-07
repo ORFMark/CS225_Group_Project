@@ -14,7 +14,7 @@ vector<Item*> Cell::generateLoot(int difficulty) {
 	vector<Item*> Inv;
 	for(int i = 0; i < difficulty; i++) {
 		if(randInt(0,3) == 1) {
-			Enchantment it("random");
+			Enchanted_Item it("random");
 			Inv.push_back((&it));
 		}
 		else {

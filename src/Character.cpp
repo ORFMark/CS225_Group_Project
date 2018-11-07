@@ -26,10 +26,10 @@ void Character::Attack(Character& target) {
 		target.health -= (attack - target.defense);
 }
 
-// TODO
-// void Character::AddBonus(Item item) {
-// 	
-// }
+
+void Character::AddBonus(Item *item) {
+
+ }
 
 bool Character::RemoveItem(Item item) {
 	vector<Item>::iterator it;
