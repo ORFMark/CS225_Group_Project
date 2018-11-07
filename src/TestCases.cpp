@@ -20,8 +20,9 @@ int main() {
 	Enchanted_Item test2("random");
 	cout << test << endl;
 	cout << test2 << endl;
-	Character player("Player");
+	Character player("Player", 100, 20, 10);
 	player.AddItem(&test2);
+	cout << player << endl;
 	fflush(stdout);
 	Map map(10);
 	return 0;

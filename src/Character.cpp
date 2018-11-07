@@ -79,29 +79,30 @@ void Character::AddItem(Item *item) {
 			}
 		}
 		if (item->hasEnchantment == true) {
-			Enchanted_Item eItem = *item;
-			if(eItem.enchantmentTarget.compare(h) == 0) {
+			//Enchanted_Item *ptrEItem = (*Enchanted_Item) item;
+			//Enchanted_Item eItem = *ptrEItem;
+			if(item->enchantmentTarget.compare(h) == 0) {
 					caseSelect = 0;
 				}
-				else if (eItem.enchantmentTarget.compare(d) == 0) {
+				else if (item->enchantmentTarget.compare(d) == 0) {
 					caseSelect = 1;
 				}
-				else if (eItem.enchantmentTarget.compare(a) == 0) {
+				else if (item->enchantmentTarget.compare(a) == 0) {
 					caseSelect = 2;
 				}
 				else {
 					caseSelect = 99;
 				}
-			if(eItem.enchantmentPrecent == true) {
+			if(item->enchantmentPrecent == true) {
 				switch(caseSelect) {
 				case 0:
-					health += health * (eItem.enchantmentBonus / 100);
+					health += health * (item->enchantmentBonus / 100);
 					break;
 				case 1:
-					defense += defense * (eItem.enchantmentBonus / 100);
+					defense += defense * (item->enchantmentBonus / 100);
 					break;
 				case 2:
-					attack += attack * (eItem.enchantmentBonus / 100);
+					attack += attack * (item->enchantmentBonus / 100);
 					break;
 				default:
 					throw("Invalid Enchantment modifier");
@@ -112,13 +113,13 @@ void Character::AddItem(Item *item) {
 			else {
 				switch(caseSelect) {
 				case 0:
-					health += eItem.enchantmentBonus;
+					health += item->enchantmentBonus;
 					break;
 				case 1:
-					defense += eItem.enchantmentBonus;
+					defense += item->enchantmentBonus;
 					break;
 				case 2:
-					attack += eItem.enchantmentBonus;
+					attack += item->enchantmentBonus;
 					break;
 				default:
 					throw("Invalid Enchantment modifier");
@@ -146,13 +147,12 @@ bool Character::RemoveItem(Item *item) {
 //}
 
 ostream& operator<<(ostream& os, Character& player) {
-	vector<Item>::iterator it;
 	os << "Name: " << player.name << endl;
 	os << "Health: " << player.health << endl;
 	os << "Attack: " << player.attack << endl;
 	os << "Defense: " << player.defense << endl;
 	os << "Inventory: ";
-	for (it = player.inventory.begin(); it != player.inventory.end(); it++)
-		os << *it << " "; // need to override the insertion operator for the item class
+	for (int i = 0; i != player.inventory.size(); i++)
+		os << *(player.inventory.at(i)) << " "; // need to override the insertion operator for the item class
 	return os;
 }

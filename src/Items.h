@@ -20,6 +20,10 @@ public: //TODO Fix this!!!!
 	float bonus;
 	bool isPrecent;
 	bool hasEnchantment;
+	string enchantmentName;
+	string enchantmentTarget;
+	float enchantmentBonus;
+	bool enchantmentPrecent;
 public:
 	Item(string name = "random");
 	string getName() {return name;}
@@ -33,10 +37,7 @@ public:
 
 class Enchanted_Item : public Item {
 public:
-	string enchantmentName;
-	string enchantmentTarget;
-	float enchantmentBonus;
-	bool enchantmentPrecent;
+
 public:
 	Enchanted_Item(string name = "random");
 	friend ostream& operator<<(ostream& os, Enchanted_Item& item);
