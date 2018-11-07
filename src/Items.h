@@ -14,7 +14,7 @@
 using namespace std;
 
 class Item {
-protected:
+public: //TODO Fix this!!!!
 	string name;
 	string target;
 	float bonus;
@@ -32,7 +32,7 @@ public:
 };
 
 class Enchanted_Item : public Item {
-protected:
+public:
 	string enchantmentName;
 	string enchantmentTarget;
 	float enchantmentBonus;

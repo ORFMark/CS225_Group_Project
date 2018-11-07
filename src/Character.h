@@ -16,7 +16,7 @@ public:
 	void Attack(Character&);
 	// void Loot(&Cell); // the cell class is to be added
 	// void Move(char direction); // changed to char ('u', 'd', 'l', 'r' : "up", "down", "left", "right")
-	void AddBonus(Item*);
+	void AddItem(Item*);
 	bool RemoveItem(Item*);
 	friend ostream& operator<<(ostream&, Character&); // displays characters fields
 };

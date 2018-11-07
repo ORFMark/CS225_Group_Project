@@ -11,6 +11,7 @@
 #include <string>
 #include "items.h"
 #include "Map.h"
+#include "Character.h"
 using namespace std;
 
 int main() {
@@ -19,6 +20,8 @@ int main() {
 	Enchanted_Item test2("random");
 	cout << test << endl;
 	cout << test2 << endl;
+	Character player("Player");
+	player.AddItem(&test2);
 	fflush(stdout);
 	Map map(10);
 	return 0;
