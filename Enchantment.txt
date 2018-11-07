@@ -1,3 +1,7 @@
-2
+6
 'Enchantment of Fortitude''health''15''T'
 'Health Enchantment''health''5''F'
+'Stone Touch''defense''-5''T'
+'Decrepify''attack''-50''T'
+'Potion of Strength''attack''25''T'
+'Life Tap''health''10''T'

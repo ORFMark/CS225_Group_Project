@@ -21,7 +21,7 @@ while True:
         itemList.append(item)
     else:
         enchantmentList.append(item)
-    if (moreItems != 'Y'):
+    if (moreItems == 'N'):
         break
 ItemFile = open("Items.txt", 'w')
 EnchantmentFile = open("Enchantment.txt", 'w')

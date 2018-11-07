@@ -1,4 +1,4 @@
-15
+17
 'Bow''attack''4''F'
 'Spear''attack''4''F'
 'Sword''attack''3''F'
@@ -14,3 +14,5 @@
 'Leather Gorget''defense''1''F'
 'Chainmail Pants''defense''4''F'
 'Chainmail Helmet''defense''5''F'
+'Cloak''defense''1''F'
+'Battleaxe''attack''7''F'
