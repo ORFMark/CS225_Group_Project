@@ -33,29 +33,29 @@ void Character::AddItem(Item *item) {
 	string a = "attack";
 	int caseSelect;
 	inventory.push_back(item);
-	if(item->target.compare(h) == 0) {
+	if(item->getTargetStat().compare(h) == 0) {
 		caseSelect = 0;
 	}
-	else if (item->target.compare(d) == 0) {
+	else if (item->getTargetStat().compare(d) == 0) {
 		caseSelect = 1;
 	}
-	else if (item->target.compare(a) == 0) {
+	else if (item->getTargetStat().compare(a) == 0) {
 		caseSelect = 2;
 	}
 	else {
 		caseSelect = 99;
 	}
 	try {
-		if(item->isPrecent == true) {
+		if(item->precent() == true) {
 			switch(caseSelect) {
 			case 0:
-				health += health * (item->bonus / 100) ;
+				health += health * (item->getBonus() / 100) ;
 				break;
 			case 1:
-				defense += defense * (item->bonus / 100);
+				defense += defense * (item->getBonus() / 100);
 				break;
 			case 2:
-				attack += attack * (item->bonus / 100);
+				attack += attack * (item->getBonus() / 100);
 				break;
 			default:
 				throw("Invalid Item modifier");
@@ -66,44 +66,44 @@ void Character::AddItem(Item *item) {
 		else {
 			switch(caseSelect) {
 			case 0:
-				health += item->bonus;
+				health += item->getBonus();
 				break;
 			case 1:
-				defense += item->bonus;
+				defense += item->getBonus();
 				break;
 			case 2:
-				attack += item->bonus;
+				attack += item->getBonus();
 				break;
 			default:
 				throw("Invalid Item modifier");
 				break;
 			}
 		}
-		if (item->hasEnchantment == true) {
+		if (item->hasEnchantment() == true) {
 			//Enchanted_Item *ptrEItem = (*Enchanted_Item) item;
 			//Enchanted_Item eItem = *ptrEItem;
-			if(item->enchantmentTarget.compare(h) == 0) {
+			if(item->getEnchantmentTargetStat().compare(h) == 0) {
 					caseSelect = 0;
 				}
-				else if (item->enchantmentTarget.compare(d) == 0) {
+				else if (item->getEnchantmentTargetStat().compare(d) == 0) {
 					caseSelect = 1;
 				}
-				else if (item->enchantmentTarget.compare(a) == 0) {
+				else if (item->getEnchantmentTargetStat().compare(a) == 0) {
 					caseSelect = 2;
 				}
 				else {
 					caseSelect = 99;
 				}
-			if(item->enchantmentPrecent == true) {
+			if(item->getEnchantmentPrecent() == true) {
 				switch(caseSelect) {
 				case 0:
-					health += health * (item->enchantmentBonus / 100);
+					health += health * (item->getEnchantmentBonus() / 100);
 					break;
 				case 1:
-					defense += defense * (item->enchantmentBonus / 100);
+					defense += defense * (item->getEnchantmentBonus() / 100);
 					break;
 				case 2:
-					attack += attack * (item->enchantmentBonus / 100);
+					attack += attack * (item->getEnchantmentBonus() / 100);
 					break;
 				default:
 					throw("Invalid Enchantment modifier");
@@ -114,13 +114,13 @@ void Character::AddItem(Item *item) {
 			else {
 				switch(caseSelect) {
 				case 0:
-					health += item->enchantmentBonus;
+					health += item->getEnchantmentBonus();
 					break;
 				case 1:
-					defense += item->enchantmentBonus;
+					defense += item->getEnchantmentBonus();
 					break;
 				case 2:
-					attack += item->enchantmentBonus;
+					attack += item->getEnchantmentBonus();
 					break;
 				default:
 					throw("Invalid Enchantment modifier");

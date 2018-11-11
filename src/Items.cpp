@@ -8,9 +8,10 @@
 #include "Items.h"
 
 using namespace std;
+
 Item::Item(string name) {
 	//cout << "Building item" << endl;;
-	hasEnchantment = false;
+	isEnchanted = false;
 	string line;
 	ifstream fin("Items.txt");
 	int rand;
@@ -63,7 +64,7 @@ Item::~Item() {
 	cout << name << " has been destroyed" << endl;
 }
 Enchanted_Item::Enchanted_Item(string name) {
-	hasEnchantment = true;
+	isEnchanted = true;
 	string line;
 	ifstream fin("Enchantment.txt");
 	int rand;
@@ -105,3 +106,4 @@ ostream& operator<<(ostream& os, Enchanted_Item& item) {
 Enchanted_Item::~Enchanted_Item() {
 	cout << enchantmentName << "Has been removed" << endl;
 }
+

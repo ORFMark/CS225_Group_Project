@@ -14,12 +14,12 @@
 using namespace std;
 
 class Item {
-public: //TODO Fix this!!!!
+protected: //TODO Fix this!!!!
 	string name;
 	string target;
 	float bonus;
 	bool isPrecent;
-	bool hasEnchantment;
+	bool isEnchanted;
 	string enchantmentName;
 	string enchantmentTarget;
 	float enchantmentBonus;
@@ -30,6 +30,11 @@ public:
 	string getTargetStat() {return target;}
 	float getBonus() {return bonus;}
 	bool precent() {return isPrecent;}
+	bool hasEnchantment() { return isEnchanted; }
+	string getEnchantmentName() { return enchantmentName;}
+	string getEnchantmentTargetStat() { return enchantmentTarget;}
+	float getEnchantmentBonus() { return enchantmentBonus; }
+	bool getEnchantmentPrecent() { return enchantmentPrecent; }
 	bool operator==(Item&);
 	friend ostream& operator<<(ostream& os, Item& item);
 	~Item();
