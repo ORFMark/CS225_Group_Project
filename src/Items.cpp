@@ -1,8 +1,8 @@
-/*
- * Items.cpp
- *
- *  Created on: Oct 30, 2018
- *      Author: Mark
+/* Author  : Mark Burrell
+ * File    : Item.cpp
+ * Date    : 30 Oct 2018
+ * Project : CS225 Group Project
+ * Purpose : Primarily to handle generation of Items and their enchanted subtype. Designed to work off a single pointer type
  */
 
 #include "Items.h"

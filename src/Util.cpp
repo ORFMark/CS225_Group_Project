@@ -1,8 +1,8 @@
-/*
- * Util.cpp
- *
- *  Created on: Oct 31, 2018
- *      Author: Mark
+/* Author  : Mark Burrell
+ * File    : Util.cpp
+ * Date    : 31 Oct 2018
+ * Project : CS225 Group Project
+ * Purpose : Code file for Util functions that will get reused alot
  */
 #include "Util.h"
 int randInt(int lowerBound, int upperBound) {

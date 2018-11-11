@@ -1,10 +1,9 @@
-/*
- * Util.h
- *
- *  Created on: Oct 31, 2018
- *      Author: Mark
+/* Author  : Mark Burrell
+ * File    : Util.h
+ * Date    : 5 Nov 2018
+ * Project : CS225 Group Project
+ * Purpose : Header file for the Util Class
  */
-
 #ifndef UTIL_H_
 #define UTIL_H_
 #include <iostream>

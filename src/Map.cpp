@@ -1,3 +1,9 @@
+/* Author  : Adam Walker
+ * File    : Map.cpp
+ * Date    : 5 Nov 2018
+ * Project : CS225 Group Project
+ * Purpose : Code file to generate a square of cells to use as our map
+ */
 #include "Map.h"
 
 Map::Map(int size) {

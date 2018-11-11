@@ -1,8 +1,9 @@
-/*
- * Author: Adam Walker
- * Date: October 31, 2018
+/* Author  : Adam Walker
+ * File    : Character.cpp
+ * Date    : 31 Oct 2018
+ * Project : CS225 Group Project
+ * Purpose : To handle Characters and their actions
  */
-
 #include <iostream>
 #include <string>
 #include <vector>

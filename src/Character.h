@@ -1,3 +1,9 @@
+/* Author  : Adam Walker
+ * File    : Character.h
+ * Date    : 31 Oct 2018
+ * Project : CS225 Group Project
+ * Purpose : Header file to abstract characters
+ */
 #pragma once
 #include <string>
 #include <iostream>

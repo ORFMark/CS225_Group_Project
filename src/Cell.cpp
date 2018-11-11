@@ -1,3 +1,9 @@
+/* Author  : Adam Walker and Mark Burrell
+ * File    : Cell.cpp
+ * Date    : 5 November 2018
+ * Project : CS225 Group Project
+ * Purpose : To handle each individual cell of the map, including generation and destruction
+ */
 #include <vector>
 #include "Character.h"
 #include "Items.h"

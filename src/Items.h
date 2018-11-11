@@ -1,8 +1,8 @@
-/*
- * Items.h
- *
- *  Created on: Oct 30, 2018
- *      Author: Mark
+/* Author  : Mark Burrell
+ * File    : Item.cpp
+ * Date    : 30 Oct 2018
+ * Project : CS225 Group Project
+ * Purpose : Header file for items for consulting so people don't need to read all the code
  */
 
 #ifndef ITEMS_H_
@@ -14,7 +14,7 @@
 using namespace std;
 
 class Item {
-protected: //TODO Fix this!!!!
+protected:
 	string name;
 	string target;
 	float bonus;
