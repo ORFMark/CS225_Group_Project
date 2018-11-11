@@ -36,5 +36,55 @@ vector<string> stringSplit(string rawString) {
 	return strV;
 }
 
+int inputInt(string prompt) {
+int in = 0;
+cout << prompt;
+cin >> in;
+while (!cin) {
+	cout << "Not a valid integer!" << endl;
+	cin.clear();
+	cin.ignore(INT_MAX, '\n');
+	cout << prompt;
+	cin >> in;
+}
+return in;
+}
 
+char inputLetter(string prompt) {
+	char out;
+	bool done = false;
 
+	do {
+		cout << prompt;
+		cin >> out;
+		if ((out >= 'a' && out <= 'z') || (out >= 'A' && out <= 'Z')) {
+			done = true;
+		}
+		else {
+			cout << "Not a valid letter" << endl;
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+		}
+	} while (!done);
+	return out;
+}
+
+string inputString(string prompt) {
+	string out;
+	bool done = false;
+
+	do {
+		cout << prompt;
+		cin >> out;
+		if (!cin) {
+			cout << "Invalid input!!!" << endl;
+			cin.clear();
+			cin.ignore(INT_MAX, '\n');
+			done = false;
+		}
+		else {
+			done = true;
+		}
+	} while (!done);
+	return out;
+}

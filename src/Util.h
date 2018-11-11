@@ -7,6 +7,7 @@
 #ifndef UTIL_H_
 #define UTIL_H_
 #include <iostream>
+#include <climits>
 #include <stdlib.h>
 #include <time.h>
 #include <string>
@@ -14,6 +15,6 @@
 using namespace std;
 int randInt(int lowerBound, int upperBound);
 vector<string> stringSplit(string raw);
-
-
+int inputInt(string prompt);
+char inputLetter(string prompt);
 #endif /* UTIL_H_ */
