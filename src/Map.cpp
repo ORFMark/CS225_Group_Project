@@ -29,43 +29,58 @@ void Map::validPos(int* pos) {
 }
 void Map::Move(char direction, Character& player) {
 	int caseSelect = (int) direction;
-	bool done = false;
+
 	int* testPos = (int*) player.getPos();
-	do {
-		try {
-			testPos = (int*) player.getPos();
-			switch (caseSelect) {
-			case 'r':
-				testPos[1]++;
-				validPos(testPos);
-				break;
-			case 'l':
-				testPos[1]--;
-				validPos(testPos);
-				break;
-			case 'd':
-				testPos[0]++;
-				validPos(testPos);
-				break;
-			case 'u':
-				testPos[0]--;
-				validPos(testPos);
-				break;
-			default:
-				throw 0;
-			}
-			player.setPos(testPos);
-			done = true;
+	try {
+		testPos = (int*) player.getPos();
+		switch (caseSelect) {
+		case 'r':
+			testPos[1]++;
+			validPos(testPos);
+			break;
+		case 'l':
+			testPos[1]--;
+			validPos(testPos);
+			break;
+		case 'd':
+			testPos[0]++;
+			validPos(testPos);
+			break;
+		case 'u':
+			testPos[0]--;
+			validPos(testPos);
+			break;
+		default:
+			throw 0;
 		}
-		catch (const char* e) {
-			cout << e << endl;
+		if (map[player.getPos()[0]][player.getPos()[1]].getEncounter().getHealth() <= 0) {
+			map[player.getPos()[0]][player.getPos()[1]].setStatus('C');
 		}
-		catch (int e) {
-			throw ("Invalid Direction!");
-		}
+		player.setPos(testPos);
 
-	} while (!done);
+	}
+	catch (const char* e) {
+		throw e;
+	}
+	catch (int e) {
+		throw ("Invalid Direction!");
+	}
 
+
+}
+
+void Map::cellAction(Character& player) {
+	Cell currentCell = map[player.getPos()[0]][player.getPos()[1]];
+	currentCell.setStatus('X');
+	if (currentCell.getEncounter().getHealth() > 0) {
+		player.Attack(currentCell.getEncounter());
+	}
+	if (currentCell.getEncounter().getHealth() > 0) {
+		currentCell.getEncounter().Attack(player);
+	}
+	else {
+		currentCell.lootCell(player);
+	}
 }
 
 ostream& operator<<(ostream& os, Map& map) {

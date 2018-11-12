@@ -24,6 +24,6 @@ public:
 		Loot = generateLoot(difficulty);
 		status = 'N';
 	}
-	Character getEncounter() {return Encounter;}
+	Character& getEncounter() {return Encounter;}
 	void lootCell(Character&);
 };

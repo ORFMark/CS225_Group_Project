@@ -9,7 +9,7 @@
 using namespace std;
 
 void displayUI(Character p, Map m) {
-	cout << "Map " << endl << m << endl << "______________________________" << endl << "You: " << endl << p << endl << "______________________________" << endl;
+	cout << "Map " << endl << m << endl << "______________________________" << endl << "You: " << endl << p << endl << "______________________________" << endl << "Monster";
 }
 
 

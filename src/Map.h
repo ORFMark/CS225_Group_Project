@@ -6,6 +6,7 @@
  */
 #pragma once
 #include "Cell.h"
+#include "Character.h"
 using namespace std;
 class Map {
 private:
@@ -18,5 +19,6 @@ public:
 	Map(int size);
 	void displayMap();
 	void Move(char direction, Character& player); // changed to char ('u', 'd', 'l', 'r' : "up", "down", "left", "right")
+	void cellAction(Character& player);
 	friend ostream& operator<<(ostream& os, Map& map);
 };
