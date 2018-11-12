@@ -20,7 +20,7 @@ private:
 	int currentPos[2] = {0, 0};
 public:
 	Character(string = "Player", float = 100.0, float = 20.0, float= 10.0);
-	~Character();
+	//~Character();
 	void Attack(Character&);
 	void AddItem(Item*);
 	bool RemoveItem(Item*);

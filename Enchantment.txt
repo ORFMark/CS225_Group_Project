@@ -5,3 +5,4 @@
 'Decrepify''attack''-50''T'
 'Potion of Strength''attack''25''T'
 'Life Tap''health''10''T'
+'Poison''health''15''T'

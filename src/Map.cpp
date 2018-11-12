@@ -63,26 +63,25 @@ void Map::Move(char direction, Character& player) {
 		throw e;
 	}
 	catch (int e) {
-		throw ("Invalid Direction!");
+		throw ("Invalid Direction!\n");
 	}
 
 
 }
 
 void Map::cellAction(Character& player) {
-	Cell& currentCell = map[player.getPos()[0]][player.getPos()[1]];
-	currentCell.setStatus('X');
-	cout << currentCell.getEncounter() << endl;
-	if (currentCell.getEncounter().getHealth() > 0) {
-		player.Attack(currentCell.getEncounter());
+	map[player.getPos()[0]][player.getPos()[1]].setStatus('X');
+	cout << map[player.getPos()[0]][player.getPos()[1]].getEncounter() << endl;
+	if (map[player.getPos()[0]][player.getPos()[1]].getEncounter().getHealth() > 0) {
+		player.Attack(map[player.getPos()[0]][player.getPos()[1]].getEncounter());
 	}
-	if (currentCell.getEncounter().getHealth() > 0) {
-		currentCell.getEncounter().Attack(player);
+	if (map[player.getPos()[0]][player.getPos()[1]].getEncounter().getHealth() > 0) {
+		map[player.getPos()[0]][player.getPos()[1]].getEncounter().Attack(player);
 	}
 	else {
-		cout << "Monster Defeated!" << endl;
-		currentCell.lootCell(player);
-		cout << "Cell looted " << endl;
+		//cout << "Monster Defeated!" << endl;
+		map[player.getPos()[0]][player.getPos()[1]].lootCell(player);
+		//cout << "Cell looted " << endl;
 	}
 }
 

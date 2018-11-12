@@ -12,22 +12,18 @@
 using namespace std;
 
 Character Cell::generateEncounter(int difficulty) {
-	Character monster = Character ("Monster",  randInt(1,100) * difficulty,  randInt(1,10) * difficulty,  randInt(1,10) * difficulty);
-	return monster;
+	 return *( new Character ("Monster",  randInt(1,100) * difficulty,  randInt(1,10) * difficulty,  randInt(1,10) * difficulty));
 }
 
 vector<Item*> Cell::generateLoot(int difficulty) {
 	vector<Item*> Inv;
 	for(int i = 0; i < difficulty; i++) {
 		if(randInt(0,3) == 1) {
-			Enchanted_Item it("random");
-			cout << it;
-			Inv.push_back((&it));
+
+			Inv.push_back((new Enchanted_Item("random")));
 		}
 		else {
-			Item e("random");
-			cout << e;
-			Inv.push_back(&e);
+			Inv.push_back(new Item("random"));
 		}
 	}
 	return Inv;

@@ -16,3 +16,4 @@
 'Chainmail Helmet''defense''5''F'
 'Cloak''defense''1''F'
 'Battleaxe''attack''7''F'
+'Stav''attack''3''F'

@@ -18,9 +18,6 @@ Character::Character(string name, float health, float attack, float defense) {
 	this->defense = defense;
 }
 
-Character::~Character() {
-	cout << "Wasted!" << endl;
-}
 
 void Character::Attack(Character& target) {
 	if (attack > target.defense) {
