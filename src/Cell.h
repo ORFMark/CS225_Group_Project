@@ -9,16 +9,21 @@
 #include "Items.h"
 class Cell {
 private:
-	vector<Character> Encounter;
+	Character Encounter;
 	vector<Item*> Loot;
 	int difficulty;
+	char status;
 public:
-	vector<Character> generateEncounter(int);
+	char getStatus() {return status;}
+	void setStatus(char newStatus) {status = newStatus; }
+	Character generateEncounter(int);
 	vector<Item*> generateLoot(int);
 	Cell(int difficulty = 1) {
 		this->difficulty = difficulty;
 		Encounter = generateEncounter(difficulty);
 		Loot = generateLoot(difficulty);
+		status = 'N';
 	}
+	Character getEncounter() {return Encounter;}
 	void lootCell(Character&);
 };

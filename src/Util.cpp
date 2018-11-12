@@ -37,17 +37,17 @@ vector<string> stringSplit(string rawString) {
 }
 
 int inputInt(string prompt) {
-int in = 0;
-cout << prompt;
-cin >> in;
-while (!cin) {
-	cout << "Not a valid integer!" << endl;
-	cin.clear();
-	cin.ignore(INT_MAX, '\n');
+	int in = 0;
 	cout << prompt;
 	cin >> in;
-}
-return in;
+	while (!cin) {
+		cout << "Not a valid integer!" << endl;
+		cin.clear();
+		cin.ignore(INT_MAX, '\n');
+		cout << prompt;
+		cin >> in;
+	}
+	return in;
 }
 
 char inputLetter(string prompt) {

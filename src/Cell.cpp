@@ -8,12 +8,12 @@
 #include "Character.h"
 #include "Items.h"
 #include "Cell.h"
+#include "util.h"
 using namespace std;
 
-vector<Character> Cell::generateEncounter(int difficulty) {
-	// Take random characters(monsters), if any, and return to Cell
-	// Depends on difficulty of cell
-
+Character Cell::generateEncounter(int difficulty) {
+	Character monster = Character ("Monster",  randInt(1,100) * difficulty,  randInt(1,10) * difficulty,  randInt(1,10) * difficulty);
+	return monster;
 }
 
 vector<Item*> Cell::generateLoot(int difficulty) {

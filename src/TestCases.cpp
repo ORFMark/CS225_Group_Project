@@ -12,18 +12,18 @@
 #include "Items.h"
 #include "Map.h"
 #include "Character.h"
+#include "UI.h"
 using namespace std;
 
 int main() {
 	srand(time(NULL));
-	Item test("random");
-	Enchanted_Item test2("random");
-	cout << test << endl;
-	cout << test2 << endl;
 	Character player("Player", 100, 20, 10);
-	player.AddItem(&test);
-	cout << player << endl;
-	fflush(stdout);
+	Character monster = Character ("Monster",  randInt(1,100) * 3,  randInt(1,10) * 3,  randInt(1,10) * 3);
 	Map map(10);
+	while (player.getHealth() > 0 && monster.getHealth() > 0) {
+		displayUI(player, map);
+		monster.Attack(player);
+		player.Attack(monster);
+	}
 	return 0;
 }

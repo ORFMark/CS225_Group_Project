@@ -11,7 +11,7 @@
 #include "Character.h"
 using namespace std;
 
-Character::Character(string name = "Player", float health = 100.0, float attack = 20.0, float defense = 10.0) {
+Character::Character(string name, float health, float attack, float defense) {
 	this->name = name;
 	this->health = health;
 	this->attack = attack;
@@ -23,8 +23,9 @@ Character::~Character() {
 }
 
 void Character::Attack(Character& target) {
-	if (target.health > 0)
-		target.health -= (attack - target.defense);
+	if (attack > target.defense) {
+		target.health -= attack - target.defense;
+	}
 }
 
 
