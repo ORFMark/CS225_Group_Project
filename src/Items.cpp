@@ -61,7 +61,7 @@ bool Item::operator==(Item& item) {
 	return false;
 }
 Item::~Item() {
-	//cout << name << " has been destroyed" << endl;
+	cout << name << " has been destroyed" << endl;
 }
 Enchanted_Item::Enchanted_Item(string name) {
 	isEnchanted = true;
@@ -104,6 +104,6 @@ ostream& operator<<(ostream& os, Enchanted_Item& item) {
 	return os;
 }
 Enchanted_Item::~Enchanted_Item() {
-	//cout << enchantmentName << "Has been removed" << endl;
+	cout << enchantmentName << "Has been removed" << endl;
 }
 

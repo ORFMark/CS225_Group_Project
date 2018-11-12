@@ -70,8 +70,9 @@ void Map::Move(char direction, Character& player) {
 }
 
 void Map::cellAction(Character& player) {
-	Cell currentCell = map[player.getPos()[0]][player.getPos()[1]];
+	Cell& currentCell = map[player.getPos()[0]][player.getPos()[1]];
 	currentCell.setStatus('X');
+	cout << currentCell.getEncounter() << endl;
 	if (currentCell.getEncounter().getHealth() > 0) {
 		player.Attack(currentCell.getEncounter());
 	}
@@ -79,7 +80,9 @@ void Map::cellAction(Character& player) {
 		currentCell.getEncounter().Attack(player);
 	}
 	else {
+		cout << "Monster Defeated!" << endl;
 		currentCell.lootCell(player);
+		cout << "Cell looted " << endl;
 	}
 }
 

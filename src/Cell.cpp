@@ -21,10 +21,12 @@ vector<Item*> Cell::generateLoot(int difficulty) {
 	for(int i = 0; i < difficulty; i++) {
 		if(randInt(0,3) == 1) {
 			Enchanted_Item it("random");
+			cout << it;
 			Inv.push_back((&it));
 		}
 		else {
 			Item e("random");
+			cout << e;
 			Inv.push_back(&e);
 		}
 	}
@@ -32,8 +34,14 @@ vector<Item*> Cell::generateLoot(int difficulty) {
 }
 
 void Cell::lootCell(Character& looter) {
-	for(int i = 0; i < Loot.size(); i++) {
+	cout << "Starting loot" << endl;
+	for(unsigned i = 0; i < Loot.size(); i++) {
+		cout << "adding item" << (Loot.at(i)) << endl;
 		looter.AddItem(Loot.at(i));
+		cout << "finished adding" << endl;
 	}
 	Loot.clear();
+	status = 'C';
+	cout << "Looted cell!";
+
 }
