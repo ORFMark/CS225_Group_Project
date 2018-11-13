@@ -49,10 +49,14 @@ Item::Item(string name) {
 	fin.close();
 }
 
+ostream& Item::displayItem(ostream& os) {
+	os << "Item: " << name << " Bonus: " << bonus;
+		//fflush(stdout);
+		return os;
+}
+
 ostream& operator<<(ostream& os, Item& item) {
-	os << "Item: " << item.name << " Bonus: " << item.bonus;
-	//fflush(stdout);
-	return os;
+	return item.displayItem(os);
 }
 
 bool Item::operator==(Item& item) {
@@ -98,10 +102,14 @@ Enchanted_Item::Enchanted_Item(string name) {
 	//cout << "finished building Enchantment" << this->name << endl;
 	fin.close();
 }
-ostream& operator<<(ostream& os, Enchanted_Item& item) {
-	os << "Item: " << item.name << "with" << item.enchantmentName  << " Item Bonus: " << item.bonus << "Enchantment Bonus: " << item.enchantmentBonus << endl;
+
+ostream& Enchanted_Item::displayItem(ostream& os) {
+	os << "Item: " << name << " with " << enchantmentName  << " Item Bonus: " << bonus << " Enchantment Bonus: " << enchantmentBonus;
 	//fflush(stdout);
 	return os;
+}
+ostream& operator<<(ostream& os, Enchanted_Item& item) {
+	return item.displayItem(os);
 }
 Enchanted_Item::~Enchanted_Item() {
 	cout << enchantmentName << "Has been removed" << endl;

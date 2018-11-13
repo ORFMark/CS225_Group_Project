@@ -24,6 +24,7 @@ protected:
 	string enchantmentTarget;
 	float enchantmentBonus;
 	bool enchantmentPrecent;
+	virtual ostream& displayItem(ostream& os);
 public:
 	Item(string name = "random");
 	string getName() {return name;}
@@ -41,6 +42,8 @@ public:
 };
 
 class Enchanted_Item : public Item {
+private:
+	ostream& displayItem(ostream& os);
 public:
 	Enchanted_Item(string name = "random");
 	friend ostream& operator<<(ostream& os, Enchanted_Item& item);
