@@ -21,7 +21,7 @@ vector<Item*> Cell::generateLoot(int difficulty) {
 	for (int i = 0; i < difficulty; i++) {
 		if (randInt(0, 3) == 1) {
 
-			Inv.push_back((new Enchanted_Item("random")));
+			Inv.push_back((new EnchantedItem("random")));
 		} else {
 			Inv.push_back(new Item("random"));
 		}

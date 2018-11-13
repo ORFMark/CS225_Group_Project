@@ -59,12 +59,12 @@ public:
 	~Item();
 };
 
-class Enchanted_Item: public Item {
+class EnchantedItem: public Item {
 private:
 	ostream& displayItem(ostream& os);
 public:
-	Enchanted_Item(string name = "random");
-	friend ostream& operator<<(ostream& os, Enchanted_Item& item);
-	~Enchanted_Item();
+	EnchantedItem(string name = "random");
+	friend ostream& operator<<(ostream& os, EnchantedItem& item);
+	~EnchantedItem();
 };
 #endif /* ITEMS_H_ */

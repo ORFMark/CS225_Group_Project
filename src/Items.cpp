@@ -65,7 +65,7 @@ bool Item::operator==(Item& item) {
 Item::~Item() {
 	cout << name << " has been destroyed" << endl;
 }
-Enchanted_Item::Enchanted_Item(string name) {
+EnchantedItem::EnchantedItem(string name) {
 	isEnchanted = true;
 	string line;
 	ifstream fin("Enchantment.txt");
@@ -99,16 +99,16 @@ Enchanted_Item::Enchanted_Item(string name) {
 	fin.close();
 }
 
-ostream& Enchanted_Item::displayItem(ostream& os) {
+ostream& EnchantedItem::displayItem(ostream& os) {
 	os << "Item: " << name << " with " << enchantmentName << " Item Bonus: "
 			<< bonus << " Enchantment Bonus: " << enchantmentBonus;
 	//fflush(stdout);
 	return os;
 }
-ostream& operator<<(ostream& os, Enchanted_Item& item) {
+ostream& operator<<(ostream& os, EnchantedItem& item) {
 	return item.displayItem(os);
 }
-Enchanted_Item::~Enchanted_Item() {
+EnchantedItem::~EnchantedItem() {
 	cout << enchantmentName << "Has been removed" << endl;
 }
 
