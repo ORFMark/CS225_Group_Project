@@ -32,12 +32,12 @@ vector<Item*> Cell::generateLoot(int difficulty) {
 void Cell::lootCell(Character& looter) {
 	cout << "Starting loot" << endl;
 	for(unsigned i = 0; i < Loot.size(); i++) {
-		cout << "adding item" << (Loot.at(i)) << endl;
+		//cout << "adding item" << (Loot.at(i)) << endl;
 		looter.AddItem(Loot.at(i));
-		cout << "finished adding" << endl;
+		//cout << "finished adding" << endl;
 	}
 	Loot.clear();
-	status = 'C';
+	//status = 'C';
 	cout << "Looted cell!";
 
 }

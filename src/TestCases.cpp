@@ -43,6 +43,7 @@ int main() {
 		else {
 			cout << "Invalid action!";
 		}
+		cout << endl << endl << endl << endl << endl;
 	}
 	return 0;
 }

@@ -20,5 +20,6 @@ public:
 	void displayMap();
 	void Move(char direction, Character& player); // changed to char ('u', 'd', 'l', 'r' : "up", "down", "left", "right")
 	void cellAction(Character& player);
+	Cell& getCell(int* pos) {return map[pos[0]][pos[1]]; }
 	friend ostream& operator<<(ostream& os, Map& map);
 };

@@ -42,8 +42,6 @@ public:
 
 class Enchanted_Item : public Item {
 public:
-
-public:
 	Enchanted_Item(string name = "random");
 	friend ostream& operator<<(ostream& os, Enchanted_Item& item);
 	~Enchanted_Item();

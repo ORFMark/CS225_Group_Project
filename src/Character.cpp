@@ -151,6 +151,10 @@ ostream& operator<<(ostream& os, Character& player) {
 	os << "Defense: " << player.defense << endl;
 	os << "Inventory: ";
 	for (int i = 0; i != player.inventory.size(); i++)
-		os << *(player.inventory.at(i)) << " "; // need to override the insertion operator for the item class
+		if(player.inventory.at(i)->hasEnchantment() == false) // need to override the insertion operator for the item class
+			os << *(player.inventory.at(i)) << " ";
+		else {
+			os << *(dynamic_cast<Enchanted_Item*> (player.inventory.at(i))) << " ";
+		}
 	return os;
 }

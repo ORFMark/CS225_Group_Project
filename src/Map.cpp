@@ -20,6 +20,7 @@ Map::Map(int size) {
 	}
 	spawn[0] = 0;
 	spawn[1] = 0;
+	map[0][0].setStatus('X');
 }
 
 void Map::validPos(int* pos) {
@@ -30,7 +31,10 @@ void Map::validPos(int* pos) {
 void Map::Move(char direction, Character& player) {
 	int caseSelect = (int) direction;
 
-	int* testPos = (int*) player.getPos();
+	int* testPos =  player.getPos();
+	int copyPos[2];
+	copyPos[0] = testPos[0];
+	copyPos[1] = testPos[1];
 	try {
 		testPos = (int*) player.getPos();
 		switch (caseSelect) {
@@ -56,13 +60,23 @@ void Map::Move(char direction, Character& player) {
 		if (map[player.getPos()[0]][player.getPos()[1]].getEncounter().getHealth() <= 0) {
 			map[player.getPos()[0]][player.getPos()[1]].setStatus('C');
 		}
+		getCell(copyPos).setStatus('C');
+		getCell(player.getPos()).setStatus('X');
 		player.setPos(testPos);
+		delete testPos;
+		delete copyPos;
 
 	}
 	catch (const char* e) {
+		player.setPos((int*) copyPos);
+		delete testPos;
+		delete copyPos;
 		throw e;
 	}
 	catch (int e) {
+		player.setPos((int*) copyPos);
+		delete testPos;
+		delete copyPos;
 		throw ("Invalid Direction!\n");
 	}
 
@@ -71,7 +85,7 @@ void Map::Move(char direction, Character& player) {
 
 void Map::cellAction(Character& player) {
 	map[player.getPos()[0]][player.getPos()[1]].setStatus('X');
-	cout << map[player.getPos()[0]][player.getPos()[1]].getEncounter() << endl;
+	//cout << map[player.getPos()[0]][player.getPos()[1]].getEncounter() << endl;
 	if (map[player.getPos()[0]][player.getPos()[1]].getEncounter().getHealth() > 0) {
 		player.Attack(map[player.getPos()[0]][player.getPos()[1]].getEncounter());
 	}
