@@ -18,13 +18,11 @@ Character::Character(string name, float health, float attack, float defense) {
 	this->defense = defense;
 }
 
-
 void Character::Attack(Character& target) {
 	if (attack > target.defense) {
 		target.health -= attack - target.defense;
 	}
 }
-
 
 void Character::AddItem(Item *item) {
 	string h = "health";
@@ -32,23 +30,20 @@ void Character::AddItem(Item *item) {
 	string a = "attack";
 	int caseSelect;
 	inventory.push_back(item);
-	if(item->getTargetStat().compare(h) == 0) {
+	if (item->getTargetStat().compare(h) == 0) {
 		caseSelect = 0;
-	}
-	else if (item->getTargetStat().compare(d) == 0) {
+	} else if (item->getTargetStat().compare(d) == 0) {
 		caseSelect = 1;
-	}
-	else if (item->getTargetStat().compare(a) == 0) {
+	} else if (item->getTargetStat().compare(a) == 0) {
 		caseSelect = 2;
-	}
-	else {
+	} else {
 		caseSelect = 99;
 	}
 	try {
-		if(item->precent() == true) {
-			switch(caseSelect) {
+		if (item->precent() == true) {
+			switch (caseSelect) {
 			case 0:
-				health += health * (item->getBonus() / 100) ;
+				health += health * (item->getBonus() / 100);
 				break;
 			case 1:
 				defense += defense * (item->getBonus() / 100);
@@ -61,9 +56,8 @@ void Character::AddItem(Item *item) {
 				break;
 			}
 
-		}
-		else {
-			switch(caseSelect) {
+		} else {
+			switch (caseSelect) {
 			case 0:
 				health += item->getBonus();
 				break;
@@ -81,20 +75,17 @@ void Character::AddItem(Item *item) {
 		if (item->hasEnchantment() == true) {
 			//Enchanted_Item *ptrEItem = (*Enchanted_Item) item;
 			//Enchanted_Item eItem = *ptrEItem;
-			if(item->getEnchantmentTargetStat().compare(h) == 0) {
-					caseSelect = 0;
-				}
-				else if (item->getEnchantmentTargetStat().compare(d) == 0) {
-					caseSelect = 1;
-				}
-				else if (item->getEnchantmentTargetStat().compare(a) == 0) {
-					caseSelect = 2;
-				}
-				else {
-					caseSelect = 99;
-				}
-			if(item->getEnchantmentPrecent() == true) {
-				switch(caseSelect) {
+			if (item->getEnchantmentTargetStat().compare(h) == 0) {
+				caseSelect = 0;
+			} else if (item->getEnchantmentTargetStat().compare(d) == 0) {
+				caseSelect = 1;
+			} else if (item->getEnchantmentTargetStat().compare(a) == 0) {
+				caseSelect = 2;
+			} else {
+				caseSelect = 99;
+			}
+			if (item->getEnchantmentPrecent() == true) {
+				switch (caseSelect) {
 				case 0:
 					health += health * (item->getEnchantmentBonus() / 100);
 					break;
@@ -109,9 +100,8 @@ void Character::AddItem(Item *item) {
 					break;
 				}
 
-			}
-			else {
-				switch(caseSelect) {
+			} else {
+				switch (caseSelect) {
 				case 0:
 					health += item->getEnchantmentBonus();
 					break;
@@ -133,16 +123,13 @@ void Character::AddItem(Item *item) {
 }
 
 bool Character::RemoveItem(Item *item) {
-	for(int i = 0; i < inventory.size(); i++) {
+	for (int i = 0; i < inventory.size(); i++) {
 		if (inventory.at(i) == item) {
 			inventory.erase(inventory.begin() + i);
 		}
 	}
 	return false;
 }
-
-
-
 
 ostream& operator<<(ostream& os, Character& player) {
 	os << "Name: " << player.name << endl;

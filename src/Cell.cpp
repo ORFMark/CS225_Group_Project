@@ -12,17 +12,17 @@
 using namespace std;
 
 Character Cell::generateEncounter(int difficulty) {
-	 return *( new Character ("Monster",  randInt(1,100) * difficulty,  randInt(1,10) * difficulty,  randInt(1,10) * difficulty));
+	return *(new Character("Monster", randInt(1, 100) * difficulty,
+			randInt(1, 10) * difficulty, randInt(1, 10) * difficulty));
 }
 
 vector<Item*> Cell::generateLoot(int difficulty) {
 	vector<Item*> Inv;
-	for(int i = 0; i < difficulty; i++) {
-		if(randInt(0,3) == 1) {
+	for (int i = 0; i < difficulty; i++) {
+		if (randInt(0, 3) == 1) {
 
 			Inv.push_back((new Enchanted_Item("random")));
-		}
-		else {
+		} else {
 			Inv.push_back(new Item("random"));
 		}
 	}
@@ -31,7 +31,7 @@ vector<Item*> Cell::generateLoot(int difficulty) {
 
 void Cell::lootCell(Character& looter) {
 	cout << "Starting loot" << endl;
-	for(unsigned i = 0; i < Loot.size(); i++) {
+	for (unsigned i = 0; i < Loot.size(); i++) {
 		//cout << "adding item" << (Loot.at(i)) << endl;
 		looter.AddItem(Loot.at(i));
 		//cout << "finished adding" << endl;
