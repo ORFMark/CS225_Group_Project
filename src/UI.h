@@ -14,6 +14,4 @@
 
 void displayUI(Character p, Map m);
 
-
-
 #endif /* UI_H_ */

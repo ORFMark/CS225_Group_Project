@@ -27,21 +27,39 @@ protected:
 	virtual ostream& displayItem(ostream& os);
 public:
 	Item(string name = "random");
-	string getName() {return name;}
-	string getTargetStat() {return target;}
-	float getBonus() {return bonus;}
-	bool precent() {return isPrecent;}
-	bool hasEnchantment() { return isEnchanted; }
-	string getEnchantmentName() { return enchantmentName;}
-	string getEnchantmentTargetStat() { return enchantmentTarget;}
-	float getEnchantmentBonus() { return enchantmentBonus; }
-	bool getEnchantmentPrecent() { return enchantmentPrecent; }
+	string getName() {
+		return name;
+	}
+	string getTargetStat() {
+		return target;
+	}
+	float getBonus() {
+		return bonus;
+	}
+	bool precent() {
+		return isPrecent;
+	}
+	bool hasEnchantment() {
+		return isEnchanted;
+	}
+	string getEnchantmentName() {
+		return enchantmentName;
+	}
+	string getEnchantmentTargetStat() {
+		return enchantmentTarget;
+	}
+	float getEnchantmentBonus() {
+		return enchantmentBonus;
+	}
+	bool getEnchantmentPrecent() {
+		return enchantmentPrecent;
+	}
 	bool operator==(Item&);
 	friend ostream& operator<<(ostream& os, Item& item);
 	~Item();
 };
 
-class Enchanted_Item : public Item {
+class Enchanted_Item: public Item {
 private:
 	ostream& displayItem(ostream& os);
 public:

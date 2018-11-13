@@ -18,15 +18,14 @@ Item::Item(string name) {
 	getline(fin, line);
 	int NUMBER_OF_ITEMS = stoi(line);
 	vector<string> parser;
-	if (name.compare("random") ==  0) {
-		rand = randInt(0,NUMBER_OF_ITEMS);
+	if (name.compare("random") == 0) {
+		rand = randInt(0, NUMBER_OF_ITEMS);
 		//	cout << rand << endl;
 		for (int i = 0; i <= rand; i++) {
 			getline(fin, line);
 			parser = stringSplit(line);
 		}
-	}
-	else {
+	} else {
 		do {
 			getline(fin, line);
 			if (line.length() < 3) {
@@ -39,10 +38,9 @@ Item::Item(string name) {
 	this->name = parser.at(0);
 	this->target = parser.at(1);
 	this->bonus = stoi(parser.at(2));
-	if(parser.at(3) == "F") {
+	if (parser.at(3) == "F") {
 		this->isPrecent = false;
-	}
-	else {
+	} else {
 		this->isPrecent = true;
 	}
 	//cout << "finished building item" << this->name << endl;
@@ -51,8 +49,8 @@ Item::Item(string name) {
 
 ostream& Item::displayItem(ostream& os) {
 	os << "Item: " << name << " Bonus: " << bonus;
-		//fflush(stdout);
-		return os;
+	//fflush(stdout);
+	return os;
 }
 
 ostream& operator<<(ostream& os, Item& item) {
@@ -75,15 +73,14 @@ Enchanted_Item::Enchanted_Item(string name) {
 	getline(fin, line);
 	int NUMBER_OF_ITEMS = stoi(line);
 	vector<string> parser;
-	if (name.compare("random") ==  0) {
-		rand = randInt(0,NUMBER_OF_ITEMS);
+	if (name.compare("random") == 0) {
+		rand = randInt(0, NUMBER_OF_ITEMS);
 		//	cout << rand << endl;
 		for (int i = 0; i <= rand; i++) {
 			getline(fin, line);
 			parser = stringSplit(line);
 		}
-	}
-	else {
+	} else {
 		do {
 			getline(fin, line);
 			parser = stringSplit(line);
@@ -93,10 +90,9 @@ Enchanted_Item::Enchanted_Item(string name) {
 	this->enchantmentName = parser.at(0);
 	this->enchantmentTarget = parser.at(1);
 	this->enchantmentBonus = stoi(parser.at(2));
-	if(parser.at(3) == "F") {
+	if (parser.at(3) == "F") {
 		this->enchantmentPrecent = false;
-	}
-	else {
+	} else {
 		this->enchantmentPrecent = true;
 	}
 	//cout << "finished building Enchantment" << this->name << endl;
@@ -104,7 +100,8 @@ Enchanted_Item::Enchanted_Item(string name) {
 }
 
 ostream& Enchanted_Item::displayItem(ostream& os) {
-	os << "Item: " << name << " with " << enchantmentName  << " Item Bonus: " << bonus << " Enchantment Bonus: " << enchantmentBonus;
+	os << "Item: " << name << " with " << enchantmentName << " Item Bonus: "
+			<< bonus << " Enchantment Bonus: " << enchantmentBonus;
 	//fflush(stdout);
 	return os;
 }

@@ -14,8 +14,12 @@ private:
 	int difficulty;
 	char status;
 public:
-	char getStatus() {return status;}
-	void setStatus(char newStatus) {status = newStatus; }
+	char getStatus() {
+		return status;
+	}
+	void setStatus(char newStatus) {
+		status = newStatus;
+	}
 	Character generateEncounter(int);
 	vector<Item*> generateLoot(int);
 	Cell(int difficulty = 1) {
@@ -24,6 +28,8 @@ public:
 		Loot = generateLoot(difficulty);
 		status = 'N';
 	}
-	Character& getEncounter() {return Encounter;}
+	Character& getEncounter() {
+		return Encounter;
+	}
 	void lootCell(Character&);
 };
