@@ -4,7 +4,8 @@
  * Project : CS225 Group Project
  * Purpose : Header File to abstract map
  */
-#pragma once
+#ifndef MAP_H_
+#define MAP_H_
 #include "Cell.h"
 #include "Character.h"
 using namespace std;
@@ -27,3 +28,4 @@ public:
 	}
 	friend ostream& operator<<(ostream& os, Map& map);
 };
+#endif //MAP_H_

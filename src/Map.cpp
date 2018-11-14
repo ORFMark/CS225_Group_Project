@@ -7,14 +7,14 @@
 #include "Map.h"
 
 Map::Map(int size) {
-	this->size = size; 
+	this->size = size;
 	map = new Cell*[size];
 	for (int i = 0; i < size; i++) {
 		map[i] = new Cell[size];
 	}
-	for(int i = 0; i < size; i++) {
-		for(int j = 0; j < size; j++) {
-			Cell c((i*j) % (size*size) + 1);
+	for (int i = 0; i < size; i++) {
+		for (int j = 0; j < size; j++) {
+			Cell c((i < j) ? i : j);
 			map[i][j] = c;
 		}
 	}
@@ -24,14 +24,14 @@ Map::Map(int size) {
 }
 
 void Map::validPos(int* pos) {
-	if (pos[0] < 0 || pos[0]> size || pos[1] < 0 || pos[1] > size) {
+	if (pos[0] < 0 || pos[0] > size || pos[1] < 0 || pos[1] > size) {
 		throw "A forboding wall blocks you from going that direction";
 	}
 }
 void Map::Move(char direction, Character& player) {
 	int caseSelect = (int) direction;
 
-	int* testPos =  player.getPos();
+	int* testPos = player.getPos();
 	int copyPos[2];
 	copyPos[0] = testPos[0];
 	copyPos[1] = testPos[1];
@@ -57,7 +57,8 @@ void Map::Move(char direction, Character& player) {
 		default:
 			throw 0;
 		}
-		if (map[player.getPos()[0]][player.getPos()[1]].getEncounter().getHealth() <= 0) {
+		if (map[player.getPos()[0]][player.getPos()[1]].getEncounter().getHealth()
+				<= 0) {
 			map[player.getPos()[0]][player.getPos()[1]].setStatus('C');
 		}
 		getCell(copyPos).setStatus('C');
@@ -66,33 +67,33 @@ void Map::Move(char direction, Character& player) {
 		delete testPos;
 		delete copyPos;
 
-	}
-	catch (const char* e) {
+	} catch (const char* e) {
 		player.setPos((int*) copyPos);
 		delete testPos;
 		delete copyPos;
 		throw e;
-	}
-	catch (int e) {
+	} catch (int e) {
 		player.setPos((int*) copyPos);
 		delete testPos;
 		delete copyPos;
-		throw ("Invalid Direction!\n");
+		throw("Invalid Direction!\n");
 	}
-
 
 }
 
 void Map::cellAction(Character& player) {
 	map[player.getPos()[0]][player.getPos()[1]].setStatus('X');
 	//cout << map[player.getPos()[0]][player.getPos()[1]].getEncounter() << endl;
-	if (map[player.getPos()[0]][player.getPos()[1]].getEncounter().getHealth() > 0) {
-		player.Attack(map[player.getPos()[0]][player.getPos()[1]].getEncounter());
+	if (map[player.getPos()[0]][player.getPos()[1]].getEncounter().getHealth()
+			> 0) {
+		player.Attack(
+				map[player.getPos()[0]][player.getPos()[1]].getEncounter());
 	}
-	if (map[player.getPos()[0]][player.getPos()[1]].getEncounter().getHealth() > 0) {
-		map[player.getPos()[0]][player.getPos()[1]].getEncounter().Attack(player);
-	}
-	else {
+	if (map[player.getPos()[0]][player.getPos()[1]].getEncounter().getHealth()
+			> 0) {
+		map[player.getPos()[0]][player.getPos()[1]].getEncounter().Attack(
+				player);
+	} else {
 		//cout << "Monster Defeated!" << endl;
 		map[player.getPos()[0]][player.getPos()[1]].lootCell(player);
 		//cout << "Cell looted " << endl;
@@ -101,8 +102,8 @@ void Map::cellAction(Character& player) {
 
 ostream& operator<<(ostream& os, Map& map) {
 	//os << "Displaying Map!" << endl;
-	for( int i = 0; i < map.size; i++ ) {
-		for( int j = 0; j < map.size; j++ ) {
+	for (int i = 0; i < map.size; i++) {
+		for (int j = 0; j < map.size; j++) {
 			os << map.map[i][j].getStatus() << " | ";
 		}
 		os << endl;

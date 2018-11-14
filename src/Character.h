@@ -4,7 +4,8 @@
  * Project : CS225 Group Project
  * Purpose : Header file to abstract characters
  */
-#pragma once
+#ifndef CHARACTER_H_
+#define CHARACTER_H_
 #include <string>
 #include <iostream>
 #include "Items.h"
@@ -36,3 +37,4 @@ public:
 	}
 	friend ostream& operator<<(ostream&, Character&); // displays characters fields
 };
+#endif //CHARACTER_H_

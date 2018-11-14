@@ -12,8 +12,8 @@
 using namespace std;
 
 Character Cell::generateEncounter(int difficulty) {
-	return *(new Character("Monster", randInt(1, 100) * difficulty,
-			randInt(1, 10) * difficulty, randInt(1, 10) * difficulty));
+	return *(new Character("Monster", randInt(10, 100) * difficulty+1,
+			randInt(10, 20) * difficulty+1, (randInt(10, 20) * difficulty) + 5));
 }
 
 vector<Item*> Cell::generateLoot(int difficulty) {

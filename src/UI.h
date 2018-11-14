@@ -1,8 +1,8 @@
-/*
- * UI.h
- *
- *  Created on: Nov 11, 2018
- *      Author: Mark
+/* Author  : Mark Burrell
+ * File    : UI.h
+ * Date    : 10 Nov 2018
+ * Project : CS225 Group Project
+ * Purpose : Header File to UI Helper functions
  */
 
 #ifndef UI_H_

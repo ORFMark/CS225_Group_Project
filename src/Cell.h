@@ -4,7 +4,8 @@
  * Project : CS225 Group Project
  * Purpose : Header file for cells to make it obvious what each thing holds
  */
-#pragma once
+#ifndef CELL_H_
+#define CELL_H_
 #include "Character.h"
 #include "Items.h"
 class Cell {
@@ -33,3 +34,4 @@ public:
 	}
 	void lootCell(Character&);
 };
+#endif // CELL_H_
