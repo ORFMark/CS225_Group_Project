@@ -14,7 +14,7 @@ Map::Map(int size) {
 	}
 	for (int i = 0; i < size; i++) {
 		for (int j = 0; j < size; j++) {
-			Cell c((i < j) ? i : j);
+			Cell c(((i < j) ? i : j) + 1);
 			map[i][j] = c;
 		}
 	}
